@@ -16,10 +16,96 @@ if not openai_api_key:
     st.stop()
 else:
     openai.api_key = openai_api_key
+          
+            
+            
+ #################-Frontend-####################################           
+st.markdown('<div class="title">MusePal: An AI Tool Assistant for Musicians</div>', unsafe_allow_html=True)
+st.markdown(
+    """
+    <div class="subtitle">
+        Are you a passionate musician who creates beautiful songs through instruments, 
+        but struggles when it comes to transforming their melodies into rhythmic, creative lyrics? 
+        Let MusePal help you out.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <style>
+ 
+    body {
+        background: #1e1e2f;
+        color: #f5f5f5;
+        font-family: 'Helvetica';
+    }
+
+    
+    .title {
+        font-size: 3rem;
+        font-weight: bold;
+        color:rgb(37, 39, 99);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .subtitle {
+        font-size: 1.2rem;
+        color:rgb(186, 204, 207);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+ 
+    textarea, input {
+        background-color: #2e2e3f;
+        color: #ffffff;
+        border: 1px solid #444;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    
+    button {
+        background-color: #ffcc00;
+        color: #1e1e2f;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #e6b800;
+    }
+
+   
+    .stWarning {
+        background-color: #ffcc00;
+        color: #1e1e2f;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 10px;
+    }
+ 
+    .generated-lyrics {
+        background-color: #2e2e3f;
+        color: #ffffff;
+        border: 1px solid #444;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 20px;
+        white-space: pre-wrap;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Inputs for song details
-song_description = st.text_area("Song Description", "Describe the meaning and tone of your song...")
-melody_details = st.text_input("Melody Details (Optional)", "Enter keywords or themes from your melody...")
+song_description = st.text_area("Song Description", "Describe the meaning and tone of your song...do you have any artists or songs in mind that you want to emulate?")
+melody_details = st.text_input("Melody Details (Optional)", "Enter keywords or themes from your melody...give as much detail as you want!")
 
 if st.button("Generate Lyrics"):
     with st.spinner("Brainstorming lyrics..."):
@@ -63,91 +149,4 @@ if st.button("Generate Lyrics"):
         except Exception as e:
             st.error(f"An error occurred while generating lyrics: {e}")
             
-            
-            
-            
- #################-Frontend-####################################           
-st.markdown('<div class="title">MusePal: An AI Tool Assistant for Musicians</div>', unsafe_allow_html=True)
-st.markdown(
-    """
-    <div class="subtitle">
-        Are you a passionate musician who creates beautiful songs through instruments, 
-        but struggles when it comes to transforming their melodies into rhythmic, creative lyrics? 
-        Let MusePal help you out.
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(
-    """
-    <style>
- 
-    body {
-        background: #1e1e2f;
-        color: #f5f5f5;
-        font-family: 'Helvetica';
-    }
-
-    /* Title styling */
-    .title {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #ffcc00;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-
-    .subtitle {
-        font-size: 1.2rem;
-        color:rgb(186, 204, 207);
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    /* Input box styling */
-    textarea, input {
-        background-color: #2e2e3f;
-        color: #ffffff;
-        border: 1px solid #444;
-        border-radius: 5px;
-        padding: 10px;
-    }
-
-    /* Button styling */
-    button {
-        background-color: #ffcc00;
-        color: #1e1e2f;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #e6b800;
-    }
-
-    /* Warning message styling */
-    .stWarning {
-        background-color: #ffcc00;
-        color: #1e1e2f;
-        font-weight: bold;
-        border-radius: 5px;
-        padding: 10px;
-    }
-
-    /* Generated lyrics styling */
-    .generated-lyrics {
-        background-color: #2e2e3f;
-        color: #ffffff;
-        border: 1px solid #444;
-        border-radius: 5px;
-        padding: 20px;
-        margin-top: 20px;
-        white-space: pre-wrap;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+  
