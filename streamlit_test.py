@@ -10,13 +10,7 @@ import openai
        
     """
 
-openai_api_key = st.text_input("Enter your OpenAI API Key:", type="password")
-if not openai_api_key:
-    st.warning("Please enter your OpenAI API key to generate your lyrics")
-    st.stop()
-else:
-    openai.api_key = openai_api_key
-          
+openai.api_key = st.secrets["openai"]["api_key"]
             
             
  #################-Frontend-####################################           
