@@ -39,7 +39,7 @@ st.markdown(
     .title {
         font-size: 3rem;
         font-weight: bold;
-        color:rgb(37, 39, 99);
+        color:rgb(134, 136, 188);
         text-align: center;
         margin-bottom: 20px;
     }
